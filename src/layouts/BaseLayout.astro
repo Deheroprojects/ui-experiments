@@ -268,6 +268,15 @@ const { title, description } = Astro.props;
       .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title} | PREMIUM PROJECTS</title>
+  
+  <!-- THIS MUST BE HERE -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+</head>
 </head>
 <body>
 
@@ -348,5 +357,16 @@ const { title, description } = Astro.props;
     }
   </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
