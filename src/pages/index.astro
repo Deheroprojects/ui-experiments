@@ -1,0 +1,582 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">PREMIUM PROJECTS</p>
+      <h1>Academic Writing Support for Nigerian Students</h1>
+      <p class="subtitle">Professional research projects, seminar papers, proposals, and thesis support with confidentiality, quality, and fast delivery.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/services">Explore Services</a>
+        <a class="btn btn-secondary" href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20need%20help%20with%20a%20research%20project.">Chat on WhatsApp</a>
+      </div>
+      <div class="hero-badges">
+        <span>All Faculties Covered</span>
+        <span>100% Confidential</span>
+        <span>Same-day WhatsApp Support</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-frame">
+        <img src="/images/landing-flyer.png" alt="Premium Projects academic support" />
+        <div class="hero-tag">Trusted academic writing support for Nigerian students</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-overview">
+    <div>
+      <h2>Why Choose PREMIUM PROJECTS?</h2>
+      <p>We help students across all faculties complete high-quality academic work while maintaining full confidentiality and a fast turnaround.</p>
+    </div>
+    <div class="overview-list">
+      <div>
+        <h3>Expert Writers</h3>
+        <p>Specialists in Education, Engineering, Law, Social Sciences, Medicine, and more.</p>
+      </div>
+      <div>
+        <h3>Secure Delivery</h3>
+        <p>Confidential, plagiarism-free work delivered to your inbox on time.</p>
+      </div>
+      <div>
+        <h3>Student Friendly</h3>
+        <p>Affordable pricing, multiple revisions, and support via WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="refer-section">
+    <div class="refer-copy">
+      <p class="eyebrow">Refer & Earn</p>
+      <h2>Share PREMIUM PROJECTS and earn rewards</h2>
+      <p>Refer a friend or classmate to our academic support services and get priority WhatsApp support plus faster delivery. Every successful referral makes your next order smoother.</p>
+      <div class="refer-actions">
+        <a class="btn btn-primary" href="/contact">Refer Now</a>
+        <a class="btn btn-accent" href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20want%20to%20refer%20a%20friend%20and%20learn%20about%20your%20rewards%20program.">Ask on WhatsApp</a>
+      </div>
+    </div>
+    <div class="refer-image">
+      <img src="/images/refer.png" alt="Refer and earn with Premium Projects" />
+    </div>
+  </section>
+
+  <section class="home-services">
+    <h2>Our Core Services</h2>
+    <div class="service-grid">
+      <a href="/services" class="service-card" aria-label="View Research Project Writing services">
+        <h3>Research Project Writing</h3>
+        <p>Complete chapters, proposals, literature reviews, and final submissions.</p>
+      </a>
+      <a href="/services" class="service-card" aria-label="View Seminar Papers services">
+        <h3>Seminar Papers</h3>
+        <p>Well-structured seminar presentations and papers tailored to your department.</p>
+      </a>
+      <a href="/services" class="service-card" aria-label="View Topic and Idea Support services">
+        <h3>Topic & Idea Support</h3>
+        <p>Custom research topics, project ideas, and sample frameworks that match your course.</p>
+      </a>
+      <a href="/services" class="service-card" aria-label="View Editing and Formatting services">
+        <h3>Editing & Formatting</h3>
+        <p>Proofreading, formatting, and citation checking for APA, Harvard, and Chicago styles.</p>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-highlights">
+    <h2>Trusted by Students Across Nigeria</h2>
+    <div class="highlight-grid">
+      <div>
+        <strong>Fast turnaround</strong>
+        <p>Get support quickly when deadlines are near.</p>
+      </div>
+      <div>
+        <strong>Confidential</strong>
+        <p>Every project is handled with privacy and discretion.</p>
+      </div>
+      <div>
+        <strong>Quality guaranteed</strong>
+        <p>Experienced writers and research professionals deliver accurate work.</p>
+      </div>
+      <div>
+        <strong>24/7 support</strong>
+        <p>Reach us instantly on WhatsApp for consultations and updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-latest-content">
+    <div>
+      <h2>See Our Topics and Blog Pages</h2>
+      <p>Visit the Topics page for research ideas and the Blog page for guidance, sample summaries, and writing tips.</p>
+      <div class="feature-links">
+        <a href="/topics" class="link-card">Topics</a>
+        <a href="/blog" class="link-card">Blog</a>
+        <a href="/faq" class="link-card">FAQ</a>
+        <a href="/contact" class="link-card">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 3rem 0;
+      background: white;
+      border-radius: 32px;
+      box-shadow: 0 20px 70px rgba(15, 23, 42, 0.08);
+      padding: 3.5rem 2rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: #1ca154;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.6rem, 4vw, 4.6rem);
+      margin: 0 0 1.25rem;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #475569;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions .btn {
+      min-width: 180px;
+      padding: 16px 26px;
+      font-size: 0.98rem;
+      border-radius: 999px;
+      box-shadow: 0 18px 40px rgba(28, 151, 111, 0.14);
+    }
+
+    .hero-actions .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1ca154 0%, #28b876 100%);
+      color: white;
+      border: none;
+      box-shadow: 0 18px 40px rgba(28, 151, 111, 0.18);
+    }
+
+    .btn-secondary {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2a52ad 100%);
+      color: white;
+      border: none;
+      box-shadow: 0 14px 36px rgba(34, 63, 148, 0.24);
+    }
+
+    .btn-secondary:hover {
+      background: linear-gradient(135deg, #274794 0%, #3359c2 100%);
+    }
+
+    .hero-badges {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, max-content));
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .hero-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      background: rgba(28, 154, 99, 0.1);
+      color: #0f4530;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    .hero-frame {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 35px 90px rgba(15, 23, 42, 0.14);
+      background: linear-gradient(180deg, #eff7ff 0%, #ffffff 100%);
+      min-height: 420px;
+    }
+
+    .hero-frame img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+      min-height: 420px;
+      max-height: 520px;
+    }
+
+    .hero-tag {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      background: rgba(255, 255, 255, 0.98);
+      color: #0b244f;
+      padding: 0.95rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      max-width: calc(100% - 40px);
+    }
+
+    .refer-section {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 1.75rem;
+      align-items: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, #f4f7ff 0%, #eaf2ff 100%);
+      border-radius: 28px;
+      border: 1px solid rgba(75, 110, 210, 0.12);
+      margin: 2.25rem 0;
+    }
+
+    .refer-copy {
+      max-width: 680px;
+    }
+
+    .refer-copy .eyebrow {
+      color: #2f52a6;
+      background: rgba(63, 101, 255, 0.08);
+      padding: 0.65rem 1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: 0.14em;
+    }
+
+    .refer-copy h2 {
+      font-size: clamp(2.1rem, 3vw, 3rem);
+      color: #0d1f4f;
+      margin-bottom: 1rem;
+    }
+
+    .refer-copy p {
+      margin-top: 1rem;
+      color: #475569;
+      line-height: 1.85;
+      font-size: 1.05rem;
+    }
+
+    .refer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .refer-actions .btn {
+      min-width: 190px;
+      padding: 16px 28px;
+      font-size: 1rem;
+    }
+
+    .refer-image img {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 30px 80px rgba(15, 23, 42, 0.13);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, #5c7ff4 0%, #2a51f1 100%);
+      color: white;
+      box-shadow: 0 14px 35px rgba(44, 82, 229, 0.22);
+      border: none;
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1ca154 0%, #28b876 100%);
+      color: white;
+      box-shadow: 0 18px 40px rgba(28, 151, 111, 0.18);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #0f213f;
+      border: 1px solid rgba(15, 23, 42, 0.14);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .btn-secondary:hover {
+      background: #f7fbff;
+    }
+
+    .refer-copy h2 {
+      margin: 1rem 0 1rem;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+    }
+
+    .refer-copy p {
+      margin-top: 1rem;
+      color: #475569;
+      line-height: 1.85;
+    }
+
+    .refer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.8rem;
+    }
+
+    .refer-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .refer-image img {
+      width: 100%;
+      max-width: 520px;
+      border-radius: 24px;
+      object-fit: cover;
+      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn-accent {
+      background: linear-gradient(90deg, #5c7ff4 0%, #294be3 100%);
+      color: white;
+      box-shadow: 0 12px 30px rgba(44, 82, 229, 0.24);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+    }
+
+    .home-overview,
+    .home-services,
+    .home-highlights,
+    .home-latest-content {
+      padding: 3rem 0;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .home-overview {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(240, 247, 255, 0.98));
+      border-radius: 28px;
+      padding: 3rem 2.2rem;
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.07);
+    }
+
+    .home-overview > div:first-child {
+      max-width: 700px;
+    }
+
+    .home-overview h2 {
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      margin-bottom: 1rem;
+    }
+
+    .home-overview p {
+      margin-top: 1rem;
+      color: #4f5f7a;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .overview-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .overview-list div {
+      padding: 1.9rem;
+      border-radius: 24px;
+      background: white;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.06);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .overview-list h3 {
+      margin-bottom: 0.9rem;
+      color: #0f213f;
+      font-size: 1.1rem;
+    }
+
+    .overview-list p {
+      color: #52627b;
+      line-height: 1.8;
+    }
+
+    .home-services {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.35rem;
+      margin-top: 1.75rem;
+    }
+
+    .service-card {
+      display: block;
+      padding: 1.8rem;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: 0 24px 54px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(28, 87, 196, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 65px rgba(15, 23, 42, 0.14);
+      border-color: rgba(28, 196, 150, 0.18);
+    }
+
+    .service-card h3 {
+      margin-bottom: 0.85rem;
+      color: #0f213f;
+    }
+
+    .service-card p {
+      color: #4b5871;
+      line-height: 1.8;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .highlight-grid div {
+      padding: 1.6rem;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.05);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .highlight-grid div:hover {
+      transform: translateY(-3px);
+      border-color: rgba(28, 196, 150, 0.16);
+    }
+
+    .highlight-grid strong {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+      color: #0f172a;
+    }
+
+    .feature-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .link-card {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 26px;
+      min-width: 170px;
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      background: white;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
+      border-color: rgba(28, 196, 150, 0.18);
+    }
+
+    .link-card::after {
+      content: '→';
+      margin-left: 0.6rem;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .link-card:hover::after {
+      transform: translateX(3px);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-image {
+        order: -1;
+      }
+      .overview-list,
+      .service-grid,
+      .highlight-grid,
+      .refer-section {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding: 2rem 0;
+      }
+      .refer-section {
+        padding: 2rem 1rem;
+      }
+      .hero-badges {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</BaseLayout>

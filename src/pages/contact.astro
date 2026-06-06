@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us">
+
+  <section class="contact-hero">
+    <h1>Get in Touch</h1>
+    <p>We're ready to help with your research project. Contact us today!</p>
+  </section>
+
+  <section class="contact-container">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+
+      <div class="info-item">
+        <h3>💬 WhatsApp</h3>
+        <p>
+          <a href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20need%20help%20with%20a%20research%20project." target="_blank" class="contact-link">Chat Now on WhatsApp</a>
+        </p>
+        <p class="hint">Fastest response. Available 24/7.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>📧 Email</h3>
+        <p>
+          <a href="mailto:daitoroben@gmail.com" class="contact-link">daitoroben@gmail.com</a>
+        </p>
+        <p class="hint">We respond within 1 hour during business hours.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>📱 Phone</h3>
+        <p>
+          <a href="tel:+2348012345678" class="contact-link">+234 801 234 5678</a>
+        </p>
+        <p class="hint">Call for urgent inquiries.</p>
+      </div>
+
+      <div class="info-item">
+        <h3>🏢 Office Address</h3>
+        <p>Lagos, Nigeria</p>
+        <p class="hint">Remote services available nationwide and internationally.</p>
+      </div>
+    </div>
+
+    <div class="contact-form-box">
+      <h2>Send Us a Message</h2>
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+        <input type="hidden" name="form-name" value="contact" />
+        <p style="display:none">
+          <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+        </p>
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+
+        <div class="form-group">
+          <label for="faculty">Faculty/Department</label>
+          <input type="text" id="faculty" name="faculty" placeholder="e.g., Education, Engineering" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message / Project Details</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <p class="form-note">We'll respond to your email within 1 hour.</p>
+    </div>
+  </section>
+
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contact-info h2,
+    .contact-form-box h2 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-item {
+      background: white;
+      border-left: 4px solid #667eea;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .info-item h3 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .info-item p {
+      margin: 0.3rem 0;
+      color: #555;
+    }
+
+    .contact-link {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .hint {
+      font-size: 0.9rem;
+      color: #999;
+      font-style: italic;
+    }
+
+    .contact-form-box {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background: #25D366;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #20ba5f;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+
+</BaseLayout>

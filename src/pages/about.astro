@@ -1,0 +1,191 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Us">
+
+  <section class="about-hero">
+    <h1>About PREMIUM PROJECTS</h1>
+    <p>Professional Research Writing and Project Support for Nigerian Students</p>
+  </section>
+
+  <section class="about-content">
+    <div class="about-section">
+      <h2>Who We Are</h2>
+      <p>PREMIUM PROJECTS is a dedicated research writing service committed to helping Nigerian students succeed in their academic journeys. With years of experience in academic writing and project development, we have assisted hundreds of students across all faculties and disciplines.</p>
+    </div>
+
+    <div class="about-section">
+      <h2>What We Offer</h2>
+      <ul class="services-list">
+        <li><strong>Project Topic Development</strong> — Help you select or develop unique research topics</li>
+        <li><strong>Chapter-by-Chapter Writing</strong> — Write individual chapters or complete projects</li>
+        <li><strong>Seminar Papers</strong> — Well-researched and structured seminar papers</li>
+        <li><strong>Thesis & Dissertation Support</strong> — Complete thesis and dissertation writing</li>
+        <li><strong>Proposal Writing</strong> — Research proposals that get approved</li>
+        <li><strong>Questionnaire Development</strong> — Design research instruments</li>
+        <li><strong>Literature Review</strong> — Comprehensive literature reviews</li>
+        <li><strong>Editing & Formatting</strong> — Professional proofreading and formatting</li>
+        <li><strong>Citation & Referencing</strong> — APA, Harvard, Chicago style formatting</li>
+      </ul>
+    </div>
+
+    <div class="about-section">
+      <h2>Why Choose Us?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>⚡ Fast Delivery</h3>
+          <p>We understand deadlines. Get your work done quickly without sacrificing quality.</p>
+        </div>
+        <div class="why-item">
+          <h3>✓ Quality Guaranteed</h3>
+          <p>Expert writers with deep knowledge across all departments and disciplines.</p>
+        </div>
+        <div class="why-item">
+          <h3>🔒 100% Confidential</h3>
+          <p>Your privacy is paramount. All transactions are confidential.</p>
+        </div>
+        <div class="why-item">
+          <h3>📚 All Departments</h3>
+          <p>We handle projects from Education to Engineering, Law to Medicine, and more.</p>
+        </div>
+        <div class="why-item">
+          <h3>💬 24/7 Support</h3>
+          <p>Available via WhatsApp for quick responses and support.</p>
+        </div>
+        <div class="why-item">
+          <h3>💰 Affordable Rates</h3>
+          <p>Student-friendly pricing with flexible payment options.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-section cta-section">
+      <h2>Ready to Get Started?</h2>
+      <p>Don't struggle with your research projects alone. Let our expert team help you succeed.</p>
+      <a href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20need%20help%20with%20a%20research%20project." class="btn btn-primary">Chat on WhatsApp Now</a>
+    </div>
+  </section>
+
+  <style>
+    .about-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .about-section {
+      margin-bottom: 3rem;
+    }
+
+    .about-section h2 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-section p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .services-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .services-list li {
+      background: #f8f9fa;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 0.8rem;
+      border-left: 4px solid #667eea;
+      border-radius: 4px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .why-item {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .why-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .why-item h3 {
+      color: #667eea;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .cta-section {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: #856404;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #20ba5f;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .about-section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+
+</BaseLayout>

@@ -1,0 +1,236 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Services">
+
+  <section class="services-hero">
+    <h1>Our Services</h1>
+    <p>Comprehensive research writing and project support for all academic levels</p>
+  </section>
+
+  <section class="services-grid">
+    <div class="service-card">
+      <h3>📝 Research Topic Development</h3>
+      <p>Help you choose or develop unique, researchable topics that are approved quickly by supervisors.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📚 Project Writing (Chapters 1-5)</h3>
+      <p>Complete writing of all chapters: Introduction, Literature Review, Methodology, Results, Discussion, and Conclusion.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🎓 Seminar Papers</h3>
+      <p>Well-researched seminar papers on any topic, delivered on time and ready for presentation.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🎯 Thesis & Dissertation Support</h3>
+      <p>Complete thesis and dissertation writing from start to finish for Masters and PhD programs.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>✍️ Proposal Writing</h3>
+      <p>Research proposals that get approved by your supervisor. Includes objectives, methodology, timeline, and budget.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📊 Questionnaire Development</h3>
+      <p>Design and develop research instruments tailored to your study objectives and target population.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📖 Literature Review</h3>
+      <p>Comprehensive literature reviews that synthesize existing research and identify research gaps.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>✏️ Editing & Formatting</h3>
+      <p>Professional proofreading, editing, and formatting according to your institution's requirements.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📚 References & Citations</h3>
+      <p>Proper citation formatting in APA, Harvard, Chicago, or any style your institution requires.</p>
+    </div>
+  </section>
+
+  <section class="process-section">
+    <h2>How It Works</h2>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Contact Us</h4>
+        <p>Send us your project details via WhatsApp or email</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Get Quote</h4>
+        <p>Receive a quote and timeline for your project</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Agree & Pay</h4>
+        <p>Agree to terms and make payment</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4>Get Your Work</h4>
+        <p>Receive your completed project on time</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">5</div>
+        <h4>Free Revisions</h4>
+        <p>Request changes until you're satisfied</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-box">
+    <h2>Need Help With Your Project?</h2>
+    <p>Get in touch with our team today. We're ready to help you succeed.</p>
+    <a href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20need%20help%20with%20a%20research%20project." class="btn">Chat on WhatsApp</a>
+  </section>
+
+  <style>
+    .services-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .services-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .service-card h3 {
+      color: #667eea;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .process-section {
+      background: #f8f9fa;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      margin-bottom: 3rem;
+    }
+
+    .process-section h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #667eea;
+      color: white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 auto 1rem;
+    }
+
+    .step h4 {
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+    }
+
+    .step p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .cta-box {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .cta-box h2 {
+      color: #856404;
+    }
+
+    .cta-box p {
+      color: #856404;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #20ba5f;
+    }
+
+    @media (max-width: 768px) {
+      .services-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</BaseLayout>

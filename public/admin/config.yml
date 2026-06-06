@@ -1,0 +1,122 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: "topics"
+    label: "Research Topics"
+    folder: "src/content/topics"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "Full research topic title" }
+      - label: "Faculty"
+        name: "faculty"
+        widget: "select"
+        options:
+          - "Education"
+          - "Management Sciences"
+          - "Social Sciences"
+          - "Arts"
+          - "Science"
+          - "Engineering"
+          - "Law"
+          - "Medicine and Health Sciences"
+          - "Agriculture"
+          - "Environmental Sciences"
+          - "Computer Science"
+          - "Economics"
+          - "Accounting"
+          - "Business Administration"
+          - "Public Administration"
+          - "Mass Communication"
+          - "Political Science"
+          - "Sociology"
+          - "Psychology"
+          - "Nursing"
+          - "Pharmacy"
+          - "Biochemistry"
+          - "Microbiology"
+          - "Chemistry"
+          - "Physics"
+          - "Mathematics"
+          - "Statistics"
+          - "Geography"
+          - "History"
+          - "Religious Studies"
+          - "Philosophy"
+          - "Library and Information Science"
+          - "Estate Management"
+          - "Architecture"
+          - "Building Technology"
+          - "Electrical Engineering"
+          - "Mechanical Engineering"
+          - "Civil Engineering"
+          - "Chemical Engineering"
+          - "Food Science and Technology"
+          - "Nutrition and Dietetics"
+          - "Physical and Health Education"
+          - "Fine and Applied Arts"
+          - "Music"
+          - "Theatre Arts"
+          - "Criminology"
+          - "Banking and Finance"
+          - "Insurance"
+          - "Marketing"
+          - "Entrepreneurship"
+          - "Human Resource Management"
+          - "Office Technology and Management"
+          - "Hospitality Management"
+          - "Tourism"
+          - "Co-operative Economics"
+          - "Industrial Relations and Personnel Management"
+          - "Other"
+      - { label: "Department", name: "department", widget: "string", hint: "Specific department name (e.g., Educational Management, Business Administration)" }
+      - label: "Level"
+        name: "level"
+        widget: "select"
+        required: false
+        options:
+          - "ND"
+          - "HND"
+          - "BSc / BA / BEd"
+          - "PGD"
+          - "MSc / MA / MEd"
+          - "PhD"
+      - { label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords (e.g., social media, academic performance, students)" }
+      - { label: "Abstract", name: "abstract", widget: "text", hint: "Short summary of the study (100–300 words)" }
+      - { label: "Date Published", name: "date", widget: "date", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Cover image for the topic" }
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+        hint: "Write Introduction, Objectives, Research Questions, Hypotheses, etc."
+
+  - name: "blog"
+    label: "Blog Articles"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: false
+        options:
+          - "Research Writing Tips"
+          - "Project Topics"
+          - "SPSS & Data Analysis"
+          - "Defense Tips"
+          - "Formatting & Citations"
+          - "Study Tips"
+          - "Career Advice"
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Short Description (Excerpt)", name: "excerpt", widget: "text", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }

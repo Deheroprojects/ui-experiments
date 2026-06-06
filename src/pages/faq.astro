@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="FAQ">
+
+  <section class="faq-hero">
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to common questions about our services</p>
+  </section>
+
+  <section class="faq-container">
+    <div class="faq-item">
+      <h3>How long does it take to complete a project?</h3>
+      <p>The timeline depends on the scope of your project. A complete research project (chapters 1-5) typically takes 7-14 days. Urgent delivery options are available. We'll provide a specific timeline when you contact us with your requirements.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you handle all departments and disciplines?</h3>
+      <p>Yes! We have writers across all faculties including Education, Engineering, Medicine, Law, Business, Arts, Science, and more. Whatever your department, we can help.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can you edit work I've already written?</h3>
+      <p>Absolutely. We offer professional editing, proofreading, and formatting services for existing work. We can improve structure, clarity, grammar, and ensure proper formatting and citations.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer urgent delivery?</h3>
+      <p>Yes, we offer rush delivery options. Urgent projects are completed within 24-72 hours depending on the scope. Additional fees apply for urgent delivery.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Is my work confidential?</h3>
+      <p>100% yes. Your privacy is extremely important to us. We never share client information with third parties. All work is kept completely confidential.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What citation styles do you use?</h3>
+      <p>We format in APA, Harvard, Chicago, MLA, and any other style your institution requires. Just let us know your requirements.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can you help with research methodology?</h3>
+      <p>Yes, we can help design your research methodology, develop your research instruments, and ensure your approach is appropriate for your study.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer topic suggestions?</h3>
+      <p>Yes! If you're struggling to choose a topic, we can suggest relevant, researchable topics in your field. We ensure the topic is unique and supervisor-approved.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>What payment methods do you accept?</h3>
+      <p>We accept bank transfers, debit cards, credit cards, and mobile money. Payment is due before we begin work, with options for partial payment on large projects.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Can I request revisions?</h3>
+      <p>Yes! We provide unlimited free revisions until you're completely satisfied with your work. Your satisfaction is our priority.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I get started?</h3>
+      <p>Simply click "Chat on WhatsApp" or use the contact form. Send us your project details, and we'll respond with a quote and timeline within the hour.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you write seminar papers and presentations?</h3>
+      <p>Yes, we write seminar papers, case study analyses, and other coursework. We also help prepare presentations to accompany your papers.</p>
+    </div>
+  </section>
+
+  <section class="still-need-help">
+    <h2>Still Have Questions?</h2>
+    <p>Don't hesitate to reach out. We're here to help and happy to discuss your specific needs.</p>
+    <a href="https://wa.me/2347084857977?text=Hello%20Premium%20Projects%2C%20I%20need%20help%20with%20a%20research%20project." class="btn">Chat With Us on WhatsApp</a>
+  </section>
+
+  <style>
+    .faq-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .faq-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto 3rem;
+    }
+
+    .faq-item {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .faq-item h3 {
+      color: #667eea;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .faq-item p {
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .still-need-help {
+      background: #f0f4ff;
+      border: 2px solid #667eea;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .still-need-help h2 {
+      color: #667eea;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #20ba5f;
+    }
+
+    @media (max-width: 768px) {
+      .faq-hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .faq-container {
+        padding: 0 10px;
+      }
+    }
+  </style>
+
+</BaseLayout>

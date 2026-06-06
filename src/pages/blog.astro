@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allBlogPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+---
+
+<BaseLayout title="Blog">
+
+  <section class="blog-hero">
+    <h1>Blog & Resources</h1>
+    <p>Tips, guides, and articles to help you succeed with your research projects</p>
+  </section>
+
+  <div class="blog-grid">
+    {sortedPosts.length > 0 ? (
+      sortedPosts.map(post => (
+        <article class="blog-card">
+          {post.data.image && (
+            <img src={post.data.image} alt={post.data.title} class="blog-image" />
+          )}
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="date">{new Date(post.data.date).toLocaleDateString()}</span>
+              {post.data.category && <span class="category">{post.data.category}</span>}
+            </div>
+            <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
+            <p class="excerpt">{post.data.excerpt}</p>
+            <a href={`/blog/${post.slug}`} class="read-more">Read More →</a>
+          </div>
+        </article>
+      ))
+    ) : (
+      <p>No blog posts yet. Check back soon!</p>
+    )}
+  </div>
+
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .blog-hero h1 {
+      color: white;
+      font-size: 2.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    .blog-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 1.5rem;
+    }
+
+    .blog-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .date {
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    .category {
+      background: #667eea;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.85rem;
+    }
+
+    .blog-card h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .blog-card a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .blog-card a:hover {
+      text-decoration: underline;
+    }
+
+    .excerpt {
+      color: #666;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .read-more {
+      display: inline-block;
+      color: #25D366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      color: #20ba5f;
+    }
+  </style>
+
+</BaseLayout>
