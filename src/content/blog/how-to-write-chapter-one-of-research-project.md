@@ -2,7 +2,7 @@
 title: HOW TO WRITE CHAPTER ONE OF RESEARCH PROJECT
 category: Research Writing Tips
 excerpt: Standard 5-Step Structure for Writing the Background to the Study
-draft: true
+draft: false
 ---
 Standard 5-Step Structure for Writing the Background to the Study
 
