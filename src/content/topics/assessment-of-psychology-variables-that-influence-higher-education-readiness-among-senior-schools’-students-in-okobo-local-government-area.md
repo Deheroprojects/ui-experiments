@@ -41,7 +41,7 @@ abstract: >
   . The study aims to address the gap in research regarding rural educational settings, where students often face unique socio-economic and psychological barriers during their transition to university life
 
   . Findings from this study are intended to assist educators, counselors, and policymakers in developing tailored interventions to enhance student preparedness
-draft: true
+draft: false
 ---
 ASSESSMENTOF PSYCHOLOGY VARIABLES THAT INFLUENCE HIGHER EDUCATION READINESS AMONG SENIORSCHOOLS’ STUDENTS IN OKOBO LOCAL GOVERNMENT AREA.
 
