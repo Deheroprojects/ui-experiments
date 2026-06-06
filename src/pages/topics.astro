@@ -3,146 +3,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const allTopics = await getCollection('topics', ({ data }) => !data.draft);
-const faculties = [...new Set(allTopics.map(t => t.data.faculty))].sort();
+
+const sortedTopics = allTopics.sort((a, b) => {
+  if (!a.data.date && !b.data.date) return 0;
+  if (!a.data.date) return 1;
+  if (!b.data.date) return -1;
+  return new Date(b.data.date) - new Date(a.data.date);
+});
 ---
 
 <BaseLayout title="Research Topics">
 
   <section class="topics-hero">
-    <h1>Research Project Topics</h1>
-    <p>Browse hundreds of research topics organized by faculty and department</p>
-    <input type="text" id="searchInput" placeholder="Search topics by keyword, faculty, or department..." style="width: 100%; padding: 10px; margin-top: 1rem; border: 1px solid #ccc; border-radius: 5px;" />
+    <h1>Research Topics</h1>
+    <p>Explore our collection of research topics across various faculties and departments</p>
   </section>
 
-  <section class="faculty-list">
-    {faculties.map(faculty => (
-      <div class="faculty-group" data-faculty={faculty}>
-        <h2>{faculty}</h2>
-        <div class="topic-cards">
-          {allTopics
-            .filter(t => t.data.faculty === faculty)
-            .map(topic => (
-              <div class="topic-card">
-                <h3><a href={`/topics/${topic.slug}`}>{topic.data.title}</a></h3>
-                <p class="dept"><strong>Department:</strong> {topic.data.department}</p>
-                {topic.data.level && <p class="level"><strong>Level:</strong> {topic.data.level}</p>}
-                <p class="abstract">{topic.data.abstract.substring(0, 150)}...</p>
-                <a href={`/topics/${topic.slug}`} class="read-more">View Full Topic →</a>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    ))}
-  </section>
+  {sortedTopics.length > 0 ? (
+    <div class="topics-grid">
+      {sortedTopics.map(topic => {
+        const slug = topic.slug || topic.id.replace(/\.md$/, '');
+        return (
+          <div class="topic-card">
+            <h2><a href={`/topics/${slug}`}>{topic.data.title}</a></h2>
+            <div class="topic-meta">
+              <span class="faculty">{topic.data.faculty}</span>
+              <span class="department">{topic.data.department}</span>
+              {topic.data.level && <span class="level">{topic.data.level}</span>}
+            </div>
+            <p class="abstract">{topic.data.abstract?.substring(0, 200)}...</p>
+            <a href={`/topics/${slug}`} class="read-more">View Topic →</a>
+          </div>
+        );
+      })}
+    </div>
+  ) : (
+    <p>No research topics available yet. Check back soon!</p>
+  )}
 
   <style>
     .topics-hero {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       color: white;
       padding: 3rem 2rem;
       border-radius: 10px;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
       text-align: center;
     }
 
     .topics-hero h1 {
       color: white;
-      font-size: 2.5rem;
     }
 
-    .topics-hero p {
-      font-size: 1.1rem;
-      margin-bottom: 1rem;
-    }
-
-    .faculty-group {
-      margin-bottom: 3rem;
-    }
-
-    .topic-cards {
+    .topics-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 2rem;
     }
 
     .topic-card {
       background: white;
-      border: 1px solid #ddd;
-      border-radius: 8px;
       padding: 1.5rem;
-      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
 
     .topic-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
     }
 
-    .topic-card h3 {
-      margin-bottom: 0.5rem;
+    .topic-card h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
 
-    .topic-card a {
-      color: #667eea;
+    .topic-card h2 a {
+      color: #1e3c72;
       text-decoration: none;
     }
 
-    .topic-card a:hover {
-      text-decoration: underline;
+    .topic-card h2 a:hover {
+      color: #667eea;
     }
 
-    .dept, .level {
-      font-size: 0.9rem;
+    .topic-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .faculty, .department, .level {
+      background: #f0f0f0;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
       color: #666;
-      margin: 0.3rem 0;
     }
 
     .abstract {
-      color: #555;
+      color: #666;
+      line-height: 1.6;
       margin: 1rem 0;
-      line-height: 1.5;
     }
 
     .read-more {
-      display: inline-block;
       color: #25D366;
-      font-weight: bold;
       text-decoration: none;
-      margin-top: 0.5rem;
-    }
-
-    .read-more:hover {
-      color: #20ba5f;
+      font-weight: bold;
     }
   </style>
-
-  <script>
-    const searchInput = document.getElementById('searchInput');
-    const facultyGroups = document.querySelectorAll('.faculty-group');
-
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase();
-
-        facultyGroups.forEach(group => {
-          const cards = group.querySelectorAll('.topic-card');
-          let visibleCount = 0;
-
-          cards.forEach(card => {
-            const text = card.textContent.toLowerCase();
-            if (text.includes(query)) {
-              card.style.display = 'block';
-              visibleCount++;
-            } else {
-              card.style.display = 'none';
-            }
-          });
-
-          group.style.display = visibleCount > 0 ? 'block' : 'none';
-        });
-      });
-    }
-  </script>
 
 </BaseLayout>

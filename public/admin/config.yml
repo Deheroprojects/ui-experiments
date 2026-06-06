@@ -5,17 +5,27 @@ backend:
 media_folder: public/uploads
 public_folder: /uploads
 
+site_url: https://your-site-url.com
+display_url: https://your-site-url.com
+
 collections:
+  # ============================================
+  # RESEARCH TOPICS COLLECTION
+  # ============================================
   - name: "topics"
     label: "Research Topics"
     folder: "src/content/topics"
     create: true
     slug: "{{slug}}"
+    identifier_field: "title"
+    preview_path: "topics/{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", hint: "Full research topic title" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      
       - label: "Faculty"
         name: "faculty"
         widget: "select"
+        required: true
         options:
           - "Education"
           - "Management Sciences"
@@ -74,7 +84,9 @@ collections:
           - "Co-operative Economics"
           - "Industrial Relations and Personnel Management"
           - "Other"
-      - { label: "Department", name: "department", widget: "string", hint: "Specific department name (e.g., Educational Management, Business Administration)" }
+      
+      - { label: "Department", name: "department", widget: "string", required: true }
+      
       - label: "Level"
         name: "level"
         widget: "select"
@@ -86,24 +98,36 @@ collections:
           - "PGD"
           - "MSc / MA / MEd"
           - "PhD"
+      
       - { label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords (e.g., social media, academic performance, students)" }
-      - { label: "Abstract", name: "abstract", widget: "text", hint: "Short summary of the study (100–300 words)" }
-      - { label: "Date Published", name: "date", widget: "date", required: false }
+      
+      - { label: "Abstract", name: "abstract", widget: "text", required: true, hint: "Short summary of the study (100–300 words)" }
+      
+      # ✅ FIXED: Date widget with proper configuration
+      - { label: "Date Published", name: "date", widget: "datetime", default: "", required: false, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      
       - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Cover image for the topic" }
-      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false }
-      - label: "Body"
-        name: "body"
-        widget: "markdown"
-        hint: "Write Introduction, Objectives, Research Questions, Hypotheses, etc."
+      
+      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false, required: false }
+      
+      - { label: "Body (Full Research Content)", name: "body", widget: "markdown", required: true, hint: "Write Introduction, Objectives, Research Questions, Hypotheses, etc." }
 
+  # ============================================
+  # BLOG ARTICLES COLLECTION
+  # ============================================
   - name: "blog"
     label: "Blog Articles"
     folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
+    identifier_field: "title"
+    preview_path: "blog/{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      
+      # ✅ FIXED: Date widget with proper configuration
+      - { label: "Date", name: "date", widget: "datetime", default: "{{now}}", required: false, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      
       - label: "Category"
         name: "category"
         widget: "select"
@@ -116,7 +140,11 @@ collections:
           - "Formatting & Citations"
           - "Study Tips"
           - "Career Advice"
+      
       - { label: "Featured Image", name: "image", widget: "image", required: false }
+      
       - { label: "Short Description (Excerpt)", name: "excerpt", widget: "text", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      
+      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
+      
+      - { label: "Body", name: "body", widget: "markdown", required: true }

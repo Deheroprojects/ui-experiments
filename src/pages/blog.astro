@@ -2,8 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
+// Get all non-draft blog posts
 const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
-const sortedPosts = allBlogPosts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
+// Sort posts: with dates first (newest to oldest), then without dates
+const sortedPosts = allBlogPosts.sort((a, b) => {
+  if (!a.data.date && !b.data.date) return 0;
+  if (!a.data.date) return 1;
+  if (!b.data.date) return -1;
+  return new Date(b.data.date) - new Date(a.data.date);
+});
 ---
 
 <BaseLayout title="Blog">
@@ -15,24 +23,34 @@ const sortedPosts = allBlogPosts.sort((a, b) => new Date(b.data.date) - new Date
 
   <div class="blog-grid">
     {sortedPosts.length > 0 ? (
-      sortedPosts.map(post => (
-        <article class="blog-card">
-          {post.data.image && (
-            <img src={post.data.image} alt={post.data.title} class="blog-image" />
-          )}
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="date">{new Date(post.data.date).toLocaleDateString()}</span>
-              {post.data.category && <span class="category">{post.data.category}</span>}
+      sortedPosts.map(post => {
+        // Get the slug without .md extension
+        const slug = post.slug || post.id.replace(/\.md$/, '');
+        return (
+          <article class="blog-card">
+            {post.data.image && (
+              <img src={post.data.image} alt={post.data.title} class="blog-image" />
+            )}
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span class="date">
+                  {post.data.date 
+                    ? new Date(post.data.date).toLocaleDateString() 
+                    : 'Recently added'}
+                </span>
+                {post.data.category && <span class="category">{post.data.category}</span>}
+              </div>
+              <h2><a href={`/blog/${slug}`}>{post.data.title}</a></h2>
+              <p class="excerpt">{post.data.excerpt || 'Click to read the full article...'}</p>
+              <a href={`/blog/${slug}`} class="read-more">Read More →</a>
             </div>
-            <h2><a href={`/blog/${post.slug}`}>{post.data.title}</a></h2>
-            <p class="excerpt">{post.data.excerpt}</p>
-            <a href={`/blog/${post.slug}`} class="read-more">Read More →</a>
-          </div>
-        </article>
-      ))
+          </article>
+        );
+      })
     ) : (
-      <p>No blog posts yet. Check back soon!</p>
+      <div style="text-align: center; padding: 3rem;">
+        <p>No blog posts yet. Check back soon for research tips and guides!</p>
+      </div>
     )}
   </div>
 
@@ -103,15 +121,16 @@ const sortedPosts = allBlogPosts.sort((a, b) => new Date(b.data.date) - new Date
     .blog-card h2 {
       margin-top: 0;
       margin-bottom: 0.5rem;
+      font-size: 1.3rem;
     }
 
-    .blog-card a {
-      color: #667eea;
+    .blog-card h2 a {
+      color: #1f283e;
       text-decoration: none;
     }
 
-    .blog-card a:hover {
-      text-decoration: underline;
+    .blog-card h2 a:hover {
+      color: #667eea;
     }
 
     .excerpt {

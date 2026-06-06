@@ -1,0 +1,38 @@
+
+> premium_projects@0.0.1 build
+> astro build
+
+[2m16:27:21[22m [34m[content][39m Syncing content
+[2m16:27:21[22m [34m[content][39m Synced content
+[2m16:27:22[22m [34m[types][39m Generated [2m3.33s[22m
+[2m16:27:22[22m [34m[build][39m output: [34m"static"[39m
+[2m16:27:22[22m [34m[build][39m mode: [34m"static"[39m
+[2m16:27:22[22m [34m[build][39m directory: [34mC:\Users\COMPUTER\premium_projects\dist\[39m
+[2m16:27:22[22m [34m[build][39m Collecting build info...
+[2m16:27:22[22m [34m[build][39m [32m✓ Completed in 3.42s.[39m
+[2m16:27:22[22m [34m[build][39m Building static entrypoints...
+[2m16:27:34[22m [34m[vite][39m [32m✓ built in 11.75s[39m
+[2m16:27:35[22m [34m[vite][39m [32m✓ built in 912ms[39m
+[2m16:27:35[22m [34m[build][39m Rearranging server assets...
+
+[42m[30m generating static routes [39m[49m
+[2m16:27:35[22m   [34m├─[39m [2m/about/index.html[22m [2m(+117ms)[22m 
+[2m16:27:35[22m   [34m├─[39m [2m/blog/how-to-write-chapter-one-of-research-project.md/index.html[22m[31m[1m16:27:35[22m [ERROR][39m TypeError: post.render is not a function
+    at file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/_slug__Abl7ZkeA.mjs:17:34
+    at [slug] (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/BaseLayout_CAe2LrOz.mjs:19:12)
+    at callComponentAsTemplateResultOrResponse (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:3516:31)
+    at renderToString (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:3434:32)
+    at renderPage (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:4729:18)
+    at PagesHandler.handle (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:6662:28)
+    at async callMiddleware (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:6524:10)
+    at async AstroMiddleware.handle (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:6624:18)
+    at async AstroHandler.render (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:9060:20)
+    at async BuildApp.render (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:9513:20)
+[31m[1m16:27:35[22m [ERROR] [build][39m Caught error rendering /blog/how-to-write-chapter-one-of-research-project.md: TypeError: post.render is not a function
+post.render is not a function
+  [1mStack trace:[22m
+[2m    at file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/_slug__Abl7ZkeA.mjs:17:34
+    at callComponentAsTemplateResultOrResponse (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:3516:31)
+    at renderPage (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:4729:18)
+    at async callMiddleware (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:6524:10)
+    at async AstroHandler.render (file:///C:/Users/COMPUTER/premium_projects/dist/.prerender/chunks/prerender_pxMHKHKz.mjs:9060:20)[22m
