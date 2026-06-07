@@ -8,33 +8,33 @@ media_folder: public/uploads
 public_folder: /uploads
 
 collections:
-  - name: "blog"
-    label: "Blog Articles"
-    folder: "src/content/blog"
+  - name: blog
+    label: Blog Articles
+    folder: src/content/blog
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Category", name: "category", widget: "string", required: false }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Category, name: category, widget: string, required: false }
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Excerpt, name: excerpt, widget: text, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
 
-  - name: "topics"
-    label: "Research Topics"
-    folder: "src/content/topics"
+  - name: topics
+    label: Research Topics
+    folder: src/content/topics
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Faculty", name: "faculty", widget: "string" }
-      - { label: "Department", name: "department", widget: "string" }
-      - { label: "Level", name: "level", widget: "string", required: false }
-      - { label: "Keywords", name: "keywords", widget: "string", required: false }
-      - { label: "Abstract", name: "abstract", widget: "text" }
-      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Draft", name: "draft", widget: "boolean", default: false }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: Title, name: title, widget: string }
+      - { label: Faculty, name: faculty, widget: string }
+      - { label: Department, name: department, widget: string }
+      - { label: Level, name: level, widget: string, required: false }
+      - { label: Keywords, name: keywords, widget: string, required: false }
+      - { label: Abstract, name: abstract, widget: text }
+      - { label: Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }
