@@ -1,6 +1,6 @@
 ﻿backend:
   name: github
-  repo: Deheroprojects/ui-experiments
+  repo: daitoroben-s-projects/ui-experiments
   branch: main
   site_domain: premiumprojecthelp.com.ng
 
