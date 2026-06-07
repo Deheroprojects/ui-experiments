@@ -2,7 +2,6 @@
   name: github
   repo: Deheroprojects/ui-experiments
   branch: main
-  site_domain: premiumprojecthelp.com.ng
 
 media_folder: public/uploads
 public_folder: /uploads
