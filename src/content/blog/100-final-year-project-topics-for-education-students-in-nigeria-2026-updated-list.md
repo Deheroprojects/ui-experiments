@@ -7,7 +7,7 @@ excerpt: Searching for the best final year project topic in Education? Explore
   100 updated project topics for Education students in Nigerian universities and
   colleges, covering curriculum studies, educational management, guidance and
   counselling, and more.
-draft: false
+draft: true
 ---
 **\# 100 Final Year Project Topics for Education Students in Nigeria (2026 Updated List)**
 
