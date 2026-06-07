@@ -1,150 +1,40 @@
-backend:
-  name: git-gateway
+﻿backend:
+  name: github
+  repo: Deheroprojects/ui-experiments
   branch: main
+  site_domain: premiumprojecthelp.com.ng
 
 media_folder: public/uploads
 public_folder: /uploads
 
-site_url: https://your-site-url.com
-display_url: https://your-site-url.com
-
 collections:
-  # ============================================
-  # RESEARCH TOPICS COLLECTION
-  # ============================================
-  - name: "topics"
-    label: "Research Topics"
-    folder: "src/content/topics"
-    create: true
-    slug: "{{slug}}"
-    identifier_field: "title"
-    preview_path: "topics/{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
-      
-      - label: "Faculty"
-        name: "faculty"
-        widget: "select"
-        required: true
-        options:
-          - "Education"
-          - "Management Sciences"
-          - "Social Sciences"
-          - "Arts"
-          - "Science"
-          - "Engineering"
-          - "Law"
-          - "Medicine and Health Sciences"
-          - "Agriculture"
-          - "Environmental Sciences"
-          - "Computer Science"
-          - "Economics"
-          - "Accounting"
-          - "Business Administration"
-          - "Public Administration"
-          - "Mass Communication"
-          - "Political Science"
-          - "Sociology"
-          - "Psychology"
-          - "Nursing"
-          - "Pharmacy"
-          - "Biochemistry"
-          - "Microbiology"
-          - "Chemistry"
-          - "Physics"
-          - "Mathematics"
-          - "Statistics"
-          - "Geography"
-          - "History"
-          - "Religious Studies"
-          - "Philosophy"
-          - "Library and Information Science"
-          - "Estate Management"
-          - "Architecture"
-          - "Building Technology"
-          - "Electrical Engineering"
-          - "Mechanical Engineering"
-          - "Civil Engineering"
-          - "Chemical Engineering"
-          - "Food Science and Technology"
-          - "Nutrition and Dietetics"
-          - "Physical and Health Education"
-          - "Fine and Applied Arts"
-          - "Music"
-          - "Theatre Arts"
-          - "Criminology"
-          - "Banking and Finance"
-          - "Insurance"
-          - "Marketing"
-          - "Entrepreneurship"
-          - "Human Resource Management"
-          - "Office Technology and Management"
-          - "Hospitality Management"
-          - "Tourism"
-          - "Co-operative Economics"
-          - "Industrial Relations and Personnel Management"
-          - "Other"
-      
-      - { label: "Department", name: "department", widget: "string", required: true }
-      
-      - label: "Level"
-        name: "level"
-        widget: "select"
-        required: false
-        options:
-          - "ND"
-          - "HND"
-          - "BSc / BA / BEd"
-          - "PGD"
-          - "MSc / MA / MEd"
-          - "PhD"
-      
-      - { label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated keywords (e.g., social media, academic performance, students)" }
-      
-      - { label: "Abstract", name: "abstract", widget: "text", required: true, hint: "Short summary of the study (100–300 words)" }
-      
-      # ✅ FIXED: Date widget with proper configuration
-      - { label: "Date Published", name: "date", widget: "datetime", default: "", required: false, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
-      
-      - { label: "Featured Image", name: "image", widget: "image", required: false, hint: "Cover image for the topic" }
-      
-      - { label: "Draft (hide from site)", name: "draft", widget: "boolean", default: false, required: false }
-      
-      - { label: "Body (Full Research Content)", name: "body", widget: "markdown", required: true, hint: "Write Introduction, Objectives, Research Questions, Hypotheses, etc." }
-
-  # ============================================
-  # BLOG ARTICLES COLLECTION
-  # ============================================
   - name: "blog"
     label: "Blog Articles"
     folder: "src/content/blog"
     create: true
     slug: "{{slug}}"
-    identifier_field: "title"
-    preview_path: "blog/{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", required: true }
-      
-      # ✅ FIXED: Date widget with proper configuration
-      - { label: "Date", name: "date", widget: "datetime", default: "{{now}}", required: false, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
-      
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        required: false
-        options:
-          - "Research Writing Tips"
-          - "Project Topics"
-          - "SPSS & Data Analysis"
-          - "Defense Tips"
-          - "Formatting & Citations"
-          - "Study Tips"
-          - "Career Advice"
-      
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Category", name: "category", widget: "string", required: false }
       - { label: "Featured Image", name: "image", widget: "image", required: false }
-      
-      - { label: "Short Description (Excerpt)", name: "excerpt", widget: "text", required: false }
-      
-      - { label: "Draft", name: "draft", widget: "boolean", default: false, required: false }
-      
-      - { label: "Body", name: "body", widget: "markdown", required: true }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "topics"
+    label: "Research Topics"
+    folder: "src/content/topics"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Faculty", name: "faculty", widget: "string" }
+      - { label: "Department", name: "department", widget: "string" }
+      - { label: "Level", name: "level", widget: "string", required: false }
+      - { label: "Keywords", name: "keywords", widget: "string", required: false }
+      - { label: "Abstract", name: "abstract", widget: "text" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Body", name: "body", widget: "markdown" }
